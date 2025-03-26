@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+    <!-- <h1>This is a heading</h1> -->
+    <button id="changeText">
+        Change Text
+    </button>
+    <p id="text">Original Text</p>
+    <input type="text" id="inputField" placeholder="Type Something Here">
+    <p id="output"></p>
+    <button id="disableClick">Disable Click</button>
+    <script src="task1.js"></script>
+    <script>
+        function showMessage(){
+            alert("Button Clicked");
+        }
+    </script>
+    <script>
+        let change = document.querySelector('#changeText').addEventListener("click",function(){
+            document.querySelector('#text').innerHTML = "Updated Text"
+        });
+        document.querySelector('#inputField').addEventListener('keyup',function(){
+            document.querySelector('#output').textContent = this.value;
+        });
+        let btn = document.querySelector('disableClick');
+        document.addEventListener('click',showMessage);
+
+
+setTimeout(() => {
+            btn.removeEventListener('click',showMessage);
+        }, 5000);
+</script>
+
+
+
+    
+        
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Project</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+    }
+    #counter {
+        font-size: 50px;
+        margin: 20px;
+    }
+    button {
+        font-size: 20px;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    
+
+
+
+    <h1>Interactive Counter</h1>
+    <p id="counter">0</p>
+    <button id="increment">➕ Increment</button>
+    <button id="decrement">➖ Decrement</button>
+    <button id="reset">🔄 Reset</button>
+    <button id="double">Double counter</button>
+<script>
+    let incermentBtn = document.querySelector('#increment');
+    let decrementBtn = document.querySelector('#decrement');
+    let resetBtn = document.querySelector('#reset');
+    let counterDisplay = document.querySelector('#counter');
+    let double = document.querySelector('double');
+    let count = 0;
+    incermentBtn.addEventListener('click',function(){
+        count++;
+        counterDisplay.textContent=count
+    });
+    decrementBtn.addEventListener('click', function(){
+        if(count>0){
+            count--;
+            counterDisplay.textContent=count;
+        }
+    });
+    resetBtn.addEventListener('click',function(){
+        count=0;
+        counterDisplay.textContent=count;
+    });
+    double.addEventListener('click',function(){
+        count*=2;
+        counterDisplay.textContent=count;
+    })
+</script>
+</body>
+</html>

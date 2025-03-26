@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        button {
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Employee Management System</h2>
+
+    <form id="employeeForm">
+        <input type="text" id="name" placeholder="Employee Name" required>
+        <input type="text" id="position" placeholder="Position" required>
+        <input type="number" id="salary" placeholder="Salary" required>
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <h3>Search & Sort</h3>
+    <input type="text" id="searchInput" placeholder="Search by name">
+    <select id="sortBy">
+        <option value="">Sort by</option>
+        <option value="nameAsc">Name (A-Z)</option>
+        <option value="nameDesc">Name (Z-A)</option>
+        <option value="salaryAsc">Salary (Low to High)</option>
+        <option value="salaryDesc">Salary (High to Low)</option>
+    </select>
+
+    <h3>Employee List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="employeeList"></tbody>
+    </table>
+
+    <div>
+        <button id="prevPage">Previous</button>
+        <span id="pageNumber">Page 1</span>
+        <button id="nextPage">Next</button>
+    </div>
+    <h3>Import / Export Employees</h3>
+<button id="exportCSV">Export to CSV</button>
+<input type="file" id="importCSV" accept=".csv">
+
+    <script src="project.js"></script>
+</body>
+</html>
